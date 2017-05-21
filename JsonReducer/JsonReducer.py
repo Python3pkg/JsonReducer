@@ -11,14 +11,14 @@ def reducer(data):
 
     if isinstance(data, list):
         for i in data:
-            for k, v in i.iteritems():
+            for k, v in i.items():
                 v = reducer(v)
                 if k in merged_array:
                     merged_array[k].append(v)
                 else:
                     merged_array[k] = [v]
     elif isinstance(data, dict):
-        for k, v in data.iteritems():
+        for k, v in data.items():
             v = reducer(v)
             if k in merged_array:
                 merged_array[k].append(v)
